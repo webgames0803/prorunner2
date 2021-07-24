@@ -701,7 +701,7 @@ function gamescreendraw()
  
  var ps=document.getElementById("score");
  ps.innerHTML=playerscore;
- localStorage.clear();
+ //localStorage.clear();
 }
 
 /*
