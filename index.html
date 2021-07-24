@@ -1,0 +1,58 @@
+<html>
+<head><title>Pro Runnner</title>
+<link rel="stylesheet" href="Runner.css">
+<script type="text/javascript" src="Runner.js"></script>
+</head>
+<body onload="gamescreendraw()" style="background-color:black;" onclick="MouseClk();" >
+<body onload="gamescreendraw()" style="background-color:black;" onclick="MouseClk();">
+<table id="tblgame" width="100%" height="97%"  class="gameback">
+              <tr height="10%">
+                  <td colspan="6">
+                      <canvas id="msgcanvas" width="700" height="70" style="border:0px solid #000000;">	</canvas>
+                  </td>
+              </tr>
+              <tr height="70%">
+                  <td colspan="6">
+                      <canvas id="canvas" width="700" height="550" style="border:0px solid #000000;align:top;"></canvas>
+                   </td>
+              </tr>
+              <tr height="10%" class="details" >
+                   <td rowspan="2" widht="20%" style="text-align:center">
+                        <img src="images/playerf1.png" height="80px;">
+                   </td>
+                    <td >&nbsp; Player Name<br>&nbsp;
+                         <input type="text" id="username">&nbsp;&nbsp;
+                         <input type="button" class="btn" id="btnstart" value="    Start    " onclick="startgame()">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
+                         <img src="images/trophy.png" height="80px;" >
+                    </td> 
+                         <td><label>Topper - </label><label id="topscorer"></label>
+                    </td>
+                    <td rowspan="2" style="text-align:center;">
+                        <img src="images/prorunner.png">
+                    </td> 
+                    <td rowspan="2" style="text-align:left;">
+                        <img src="images/gameicon.png" height="120px;" >
+                    </td>  
+              </tr>
+              <tr height="10%" class="details" >
+                    <td>&nbsp; Player last Score - <label id="score"></label>
+                    </td>
+                    <td>
+                      <label>Top score - </label><label id="tscore"></label>
+                    </td>
+              </tr>
+</table>
+<img id="floorimg" src="images/floortiles.png" height="0px;">
+<img id="roofimg" src="images/rooftiles.png"  height="0px;">
+
+<img id="cg1" src="images/cg1.png" height="0px;">
+<img id="cg2" src="images/cg2.png"  height="0px;">
+<img id="cg3" src="images/cg3.png" height="0px;">
+<img id="cg4" src="images/cg4.png"  height="0px;">
+<img id="cg5" src="images/cg5.png" height="0px;">
+
+</body>
+
+
