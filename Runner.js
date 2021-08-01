@@ -727,9 +727,11 @@ function obsegcreate()
     IsBird=true;
     myhole[flind].x+=800;
     myrhole[rlind].x=myhole[flind].x;
+    eagleimg.onload = function() { 
+       eagle=new eagles(myhole[flind].x-500,fcy-150);
+       o2timer=setInterval(eagleanimate,HOLEFRAMERATE);
+       } 
     eagleimg.src="images/eagle"+getrange(1,12)+".png";
-    eagle=new eagles(myhole[flind].x-500,fcy-150);
-    o2timer=setInterval(eagleanimate,HOLEFRAMERATE);
    }
 }
 
@@ -827,5 +829,5 @@ function startgame()
 */
 function getrange(min,max) 
 {
-    return Math.trunc(Math.random()*(max-min)+min);
+    return Math.round(Math.random()*(max-min)+min);
 }   
