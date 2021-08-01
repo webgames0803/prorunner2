@@ -171,14 +171,12 @@ function eagleanimate()
      if(isshieldon==true)
      {
       var ph=eagleimg.height;
-      eagleimg.onload = function() { 
+      eagleimg.src="images/spower.png";
       var dh=160-ph;
       if(eagle.y-dh<(rcy+scrh-fcy))
          eagle.y=(rcy+scrh-fcy);
       else
        eagle.y-=dh; 
-      } 
-      eagleimg.src="images/spower.png";
       
      }
      else
@@ -730,13 +728,11 @@ function obsegcreate()
   if(scorecntr>egstart && IsBird==false)
    {
     IsBird=true;
+    eagleimg.src="images/eagle"+getrange(1,12)+".png";     
     myhole[flind].x+=800;
     myrhole[rlind].x=myhole[flind].x;
-    eagleimg.onload = function() { 
-       eagle=new eagles(myhole[flind].x-500,fcy-150);
-       o2timer=setInterval(eagleanimate,HOLEFRAMERATE);
-       } 
-    eagleimg.src="images/eagle"+getrange(1,12)+".png";
+    eagle=new eagles(myhole[flind].x-500,fcy-150);
+    o2timer=setInterval(eagleanimate,HOLEFRAMERATE);
    }
 }
 
