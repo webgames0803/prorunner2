@@ -394,6 +394,8 @@ function EndGame()
      patcnt=2000;
      IsBird=false;
      IsArrow=false;
+     rlind=0;
+     flind=0;
      var ps=document.getElementById("score");
      ps.innerHTML=scorecntr;
      var ts=document.getElementById("tscore");
