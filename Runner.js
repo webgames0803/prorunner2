@@ -171,12 +171,15 @@ function eagleanimate()
      if(isshieldon==true)
      {
       var ph=eagleimg.height;
-      eagleimg.src="images/spower.png";
+      eagleimg.onload = function() { 
       var dh=160-ph;
       if(eagle.y-dh<(rcy+scrh-fcy))
          eagle.y=(rcy+scrh-fcy);
       else
-       eagle.y-=dh;
+       eagle.y-=dh; 
+      } 
+      eagleimg.src="images/spower.png";
+      
      }
      else
      {
