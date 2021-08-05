@@ -531,8 +531,7 @@ function eagles(x,y)
        this.y=this.y+EAGLE_VSPEED;
        ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,eagleimg.width+20,eagleimg.height);
      }
-    // if(this.y<=(scrh-fcy+rcy) || this.y+eagleimg.height>=fcy)
-    if(this.y<=(scrh-fcy+rcy) || this.y+150>=fcy)
+    if(this.y<=(scrh-fcy+rcy) || this.y+eagleimg.height>=fcy)
        eagleflag++; 
      ctx.drawImage(eagleimg,this.x,this.y);
    }
