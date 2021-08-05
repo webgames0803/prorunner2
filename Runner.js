@@ -35,6 +35,9 @@ var myplayer;
 var htimer,ptimer;
 var scorecntr=0;
 
+var egh=[70,60,90,80,70,80,60,100,100,120,110,95];
+var egheight=70;
+
 var icon=new Image();
 var imgidx=1;
 var itimer;
@@ -165,18 +168,18 @@ function eagleanimate()
  if(
     (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
     && 
-    (((myplayer.y-eagle.y)<eagleimg.height && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
+    (((myplayer.y-eagle.y)<egheight && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
    ) 
   {
      if(isshieldon==true)
      {
-      var ph=eagleimg.height;
+      var ph=egheight;
       eagleimg.src="images/spower.png";
       var dh=160-ph;
       if(eagle.y-dh<(rcy+scrh-fcy))
          eagle.y=(rcy+scrh-fcy);
       else
-       eagle.y-=dh; 
+         eagle.y-=dh; 
       
      }
      else
@@ -524,14 +527,14 @@ function eagles(x,y)
      if(eagleflag%2==0)
      {
        this.y=this.y-EAGLE_VSPEED;
-       ctx.clearRect(this.x+HOLESPEED,this.y+EAGLE_VSPEED,eagleimg.width+20,eagleimg.height);
+       ctx.clearRect(this.x+HOLESPEED,this.y+EAGLE_VSPEED,eagleimg.width+20,egheight);
      }
      else
      {
        this.y=this.y+EAGLE_VSPEED;
-       ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,eagleimg.width+20,eagleimg.height);
+       ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,eagleimg.width+20,egheight);
      }
-    if(this.y<=(scrh-fcy+rcy) || this.y+eagleimg.height>=fcy)
+    if(this.y<=(scrh-fcy+rcy) || this.y+egheight>=fcy)
        eagleflag++; 
      ctx.drawImage(eagleimg,this.x,this.y);
    }
@@ -728,7 +731,9 @@ function obsegcreate()
   if(scorecntr>egstart && IsBird==false)
    {
     IsBird=true;
-    eagleimg.src="images/eagle"+getrange(1,12)+".png";     
+    var bidx=getrange(1,12);
+    egheight=egh[bidx-1];
+    eagleimg.src="images/eagle"+bidx+".png";     
     myhole[flind].x+=800;
     myrhole[rlind].x=myhole[flind].x;
     eagle=new eagles(myhole[flind].x-500,fcy-150);
