@@ -40,6 +40,7 @@ var egheight=70;
 
 var egw=[100,60,103,85,82,98,60,132,115,65,66,148];
 var egwidth=100;
+var iseglecrash=0;
 
 var icon=new Image();
 var imgidx=1;
@@ -176,6 +177,11 @@ function eagleanimate()
   {
      if(isshieldon==true)
      {
+      if(iseglecrash==0)
+      {
+        ctx.clearRect(eagle.x+12,eagle.y,egwidth+5,egheight);
+        iseglecrash=1;
+      }
       var ph=egheight;
       eagleimg.src="images/spower.png";
       var dh=160-ph;
@@ -735,6 +741,7 @@ function obsegcreate()
   if(scorecntr>egstart && IsBird==false)
    {
     IsBird=true;
+    iseglecrash=0;
     var bidx=getrange(1,12);
     egheight=egh[bidx-1];
     egwidth=egw[bidx-1];
