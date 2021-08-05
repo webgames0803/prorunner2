@@ -162,10 +162,15 @@ function arrowanimate()
 function eagleanimate()
 {
  eagle.draw();
- if(
+/* if(
     (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
     && 
     (((myplayer.y-eagle.y)<eagleimg.height && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
+   ) */
+ if(
+    (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
+    && 
+    (((myplayer.y-eagle.y)<120 && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
    )
   {
      if(isshieldon==true)
