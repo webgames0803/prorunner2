@@ -193,7 +193,7 @@ function eagleanimate()
    }  
  if(eagle.x+eagleimg.width<-2)
  {
-   ctx.clearRect(eagle.x+12,eagle.y,eagleimg.width,eagleimg.height);
+   ctx.clearRect(eagle.x+12,eagle.y,eagleimg.width,egheight);
    IsBird=false;
    clearInterval(o2timer);
  }
