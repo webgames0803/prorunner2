@@ -38,6 +38,9 @@ var scorecntr=0;
 var egh=[70,60,90,80,70,80,60,100,100,120,110,95];
 var egheight=70;
 
+var egw=[100,60,103,85,82,98,60,132,115,65,66,148];
+var egwidth=100;
+
 var icon=new Image();
 var imgidx=1;
 var itimer;
@@ -166,7 +169,7 @@ function eagleanimate()
 {
  eagle.draw();
  if(
-    (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
+    (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<egwidth && (eagle.x-myplayer.x)<0))
     && 
     (((myplayer.y-eagle.y)<egheight && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
    ) 
@@ -181,7 +184,7 @@ function eagleanimate()
       else
          eagle.y-=dh; 
       egheight=160;
-      
+      egwidth =113;
      }
      else
      {
@@ -193,7 +196,7 @@ function eagleanimate()
    }  
  if(eagle.x+eagleimg.width<-2)
  {
-   ctx.clearRect(eagle.x+12,eagle.y,eagleimg.width,egheight);
+   ctx.clearRect(eagle.x+12,eagle.y,egwidth+5,egheight);
    IsBird=false;
    clearInterval(o2timer);
  }
@@ -528,12 +531,12 @@ function eagles(x,y)
      if(eagleflag%2==0)
      {
        this.y=this.y-EAGLE_VSPEED;
-       ctx.clearRect(this.x+HOLESPEED,this.y+EAGLE_VSPEED,eagleimg.width+20,egheight);
+       ctx.clearRect(this.x+HOLESPEED,this.y+EAGLE_VSPEED,egwidth+5,egheight);
      }
      else
      {
        this.y=this.y+EAGLE_VSPEED;
-       ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,eagleimg.width+20,egheight);
+       ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,egwidth+5,egheight);
      }
     if(this.y<=(scrh-fcy+rcy) || this.y+egheight>=fcy)
        eagleflag++; 
@@ -734,6 +737,7 @@ function obsegcreate()
     IsBird=true;
     var bidx=getrange(1,12);
     egheight=egh[bidx-1];
+    egwidth=egw[bidx-1];
     eagleimg.src="images/eagle"+bidx+".png";     
     myhole[flind].x+=800;
     myrhole[rlind].x=myhole[flind].x;
