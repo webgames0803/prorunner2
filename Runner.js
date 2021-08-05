@@ -162,16 +162,11 @@ function arrowanimate()
 function eagleanimate()
 {
  eagle.draw();
-/* if(
-    (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
-    && 
-    (((myplayer.y-eagle.y)<eagleimg.height && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
-   ) */
  if(
     (((eagle.x-myplayer.x)<myplayer.width && (eagle.x-myplayer.x)>0) || ((myplayer.x-eagle.x)<eagleimg.width && (eagle.x-myplayer.x)<0))
     && 
-    (((myplayer.y-eagle.y)<120 && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
-   )
+    (((myplayer.y-eagle.y)<eagleimg.height && (myplayer.y-eagle.y)>0)|| ((eagle.y-myplayer.y)<myplayer.height && (myplayer.y-eagle.y)<0))
+   ) 
   {
      if(isshieldon==true)
      {
@@ -536,7 +531,8 @@ function eagles(x,y)
        this.y=this.y+EAGLE_VSPEED;
        ctx.clearRect(this.x+HOLESPEED,this.y-EAGLE_VSPEED,eagleimg.width+20,eagleimg.height);
      }
-     if(this.y<=(scrh-fcy+rcy) || this.y+eagleimg.height>=fcy)
+    // if(this.y<=(scrh-fcy+rcy) || this.y+eagleimg.height>=fcy)
+    if(this.y<=(scrh-fcy+rcy) || this.y+150>=fcy)
        eagleflag++; 
      ctx.drawImage(eagleimg,this.x,this.y);
    }
