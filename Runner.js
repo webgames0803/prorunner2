@@ -180,6 +180,7 @@ function eagleanimate()
          eagle.y=(rcy+scrh-fcy);
       else
          eagle.y-=dh; 
+      egheight=160;
       
      }
      else
